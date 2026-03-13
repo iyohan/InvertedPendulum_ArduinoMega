@@ -10,7 +10,7 @@ The final controller combines:
 
 - EBIMU attitude data received through `Serial3`
 - Wheel position and speed estimated from left and right quadrature encoders
-- A state-based feedback control law that converts the robot state into motor voltage and PWM commands
+- An LQR-based state-feedback control law that converts the robot state into motor voltage and PWM commands
 
 The goal is to keep the body upright while driving both wheels in the direction needed to recover balance.
 
@@ -35,7 +35,7 @@ The goal is to keep the body upright while driving both wheels in the direction 
 
 ## Final Control Method
 
-The final sketch uses a state-feedback style balancing controller.
+The final sketch uses an LQR-based state-feedback balancing controller.
 
 At every control cycle, it estimates four state values:
 
